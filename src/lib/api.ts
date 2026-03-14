@@ -11,7 +11,8 @@ export const apiFetch = async <T>(
   try {
     const response = await fetch(url, {
       ...options,
-      cache: "no-store",
+      // cache: "no-store",
+      next: { revalidate: 60 },
       headers: {
         "Content-Type": "application/json",
         ...options.headers,

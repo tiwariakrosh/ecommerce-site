@@ -18,7 +18,8 @@ export default async function ProductsPage({ searchParams }: Props) {
       getAllProducts(sort),
       getAllCategories(),
     ]);
-  } catch {
+  } catch (error) {
+    console.error("ProductsPage Error:", error);
     return (
       <div className="max-w-7xl mx-auto px-6 py-20 text-center">
         <div className="bg-blue-50 border border-blue-100 rounded-3xl p-10 shadow-sm">
